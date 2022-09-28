@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Matt Osberg</title>
+    <title>Taco Cat: A Coding Project By Matt Osberg</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="/img/TransparentFavicon2.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                APP NAME
+                Taco Cat
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
                     </li>
                     <!--Edit href to point to Git Repo for project-->
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/mozzy83/TacoCat.git">Git Repo</a>
                     </li>
                     <!--Edit about href to point to portfolio site-->
                     <li class="nav-item">
@@ -56,7 +56,41 @@
     <!-- ****** Main Section ******-->
     <main class="flex-shrink-0">
         <div class="container mt-5">
-
+            <div class="row">
+                <div class="col border-end border-3">
+                    <div class="col-12 border-bottom border-3 pb-5">
+                        <h1 class="pb-3">Taco Cat - Palendrome Check</h1>
+                        <h4>A palindrome is a word, phrase, or sentence that reads the same backward as forward. Taco Cat is a palindrome.</h4>
+                    </div>
+                    <div class="col-12">
+                        <h1 class="pb-3">Instructions</h1>
+                        <h4>Enter a word, phrase, or sequence and click Submit to see if it is a palendrome.</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>Enter a word, phrase, or sentence.</h5>
+                    <form class="row">
+                        <div class="row pt-3">
+                            <div>
+                                <input id="userString" type="text" class="form-control" placeholder="Taco Cat" aria-label="Enter a word, phrase, or sentence">
+                            </div>
+                        </div>
+                        <div class="row pt-4">
+                            <div class="pb-5">
+                                <button id="btnSubmit" type="button" class="btn btn-outline-secondary">Submit</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="invisible fade show" id="resultArea">
+                                <h4>Results</h4>
+                                <p id="displayResults">
+                                
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
     <!-- ****** Footer Section ******-->
@@ -83,6 +117,9 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="/js/site.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValues);
+    </script>
 
 </body>
 </html>
