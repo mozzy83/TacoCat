@@ -1,25 +1,23 @@
 function getValues(){
     document.getElementById("resultArea").classList.add("invisible");
-
     let userString = document.getElementById("userString").value;
 
     if(userString == ""){
         alert("Please enter a valid string")
-    }else{
+    }
+    else{
     let newString = userString.toLowerCase().replace(/[^a-z0-9]/g,'');
     let revString = reverseString(newString);
     displayResults(newString, userString, revString);
-}
+    }
 }
 
 function reverseString(newString){
     let revString = [];
-
     for (let index = newString.length-1; index >= 0; index--) {
         revString += newString[index];        
     }
-
-return revString;
+    return revString;
 }
 
 function displayResults(newString, userString, revString){
