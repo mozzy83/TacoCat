@@ -7,12 +7,12 @@ function getValues(){
         alert("Please enter a valid string")
     }else{
     let newString = userString.toLowerCase().replace(/[^a-z0-9]/g,'');
-    let revString = tacoCat(newString);
+    let revString = reverseString(newString);
     displayResults(newString, userString, revString);
 }
 }
 
-function tacoCat(newString){
+function reverseString(newString){
     let revString = [];
 
     for (let index = newString.length-1; index >= 0; index--) {
