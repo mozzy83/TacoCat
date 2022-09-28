@@ -62,17 +62,46 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            //Call Hello World
-                            function HellowWorld(){
-                                    alert("Hello World");
+                            function getValues(){
+                                document.getElementById("resultArea").classList.add("invisible");
+                                let userString = document.getElementById("userString").value;
+                            
+                                if(userString == ""){
+                                    alert("Please enter a valid string")
                                 }
+                                else{
+                                let newString = userString.toLowerCase().replace(/[^a-z0-9]/g,'');
+                                let revString = reverseString(newString);
+                                displayResults(newString, userString, revString);
+                                }
+                            }
+                            
+                            function reverseString(newString){
+                                let revString = [];
+                                for (let index = newString.length-1; index >= 0; index--) {
+                                    revString += newString[index];        
+                                }
+                                return revString;
+                            }
+                            
+                            function displayResults(newString, userString, revString){
+                            
+                                if(newString == revString){
+                                    document.getElementById("displayResults").innerHTML = `Success!! <span class="result">${userString}</span> is a palindrome!`
+                                }else { document.getElementById("displayResults").innerHTML = `<span class="result">${userString}</span> is not a palindrome.`}
+                                document.getElementById("resultArea").classList.remove("invisible");
+                            }
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                    <p>The code is structured in three main functions.</p>
+                    <h5>getValues()</h5>
+                    <p>The first function initially makes sure that the area we will display the results in is invisible. Next, it gets the string the user entered and checks to make sure it's not empty.</p><p>The string is set to a new variable while setting all characters to lower case and removing special characters and white spaces. The reason for declaring a new variable is so the original string can be passed to the last function where it can be displayed back to the user.</p><p>The new string is then passed to the second function...</p>
+                    <h5>reverseString()</h5>
+                    <p>The second function declares an empty array and then populates the array with the string backwards by using a 'for loop' to iterate through it starting at the last index.</p>
+                    <h5>displayResults()</h5>
+                    <p>The final function displays the results based on a comparison between the reversed and non-reversed string. The original string entered by the user is displayed in the result in red. The last step is to remove the 'invisible' class so the results are visible.</p>
                 </div>
             </div>
         </div>
