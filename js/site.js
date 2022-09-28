@@ -2,14 +2,15 @@
 function getValues(){
     document.getElementById("resultArea").classList.add("invisible");
 
-    if(document.getElementById("userString").value == ""){
+    let userString = document.getElementById("userString").value;
+
+    if(userString == ""){
         alert("Please enter a valid string")
     }else{
-    let userString = document.getElementById("userString").value;
     userString = userString.toLowerCase().replace(/[^a-z0-9]/g,'');
     let revString = tacoCat(userString);
     displayResults(userString, revString);
-    }
+}
 }
 
 function tacoCat(userString){
